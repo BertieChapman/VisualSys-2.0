@@ -6,6 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository" : { 
+	"type" : "git"
+	, "url" : "https://github.com/BertieChapman/VisualSys-2.0.git"
+  },
   "author": "Bertrand Chapman",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }

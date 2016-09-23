@@ -42,3 +42,6 @@ jspm_packages
 
 # Idea IDE
 .idea
+
+# client libraries
+src/public/libs

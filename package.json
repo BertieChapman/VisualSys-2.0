@@ -4,15 +4,21 @@
   "description": "A rework of the visualsys project for capstone ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "lite": "lite-server",
+    "postinstall": "typings install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings"
   },
-  "repository" : { 
-	"type" : "git"
-	, "url" : "https://github.com/BertieChapman/VisualSys-2.0.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BertieChapman/VisualSys-2.0.git"
   },
   "author": "Bertrand Chapman",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "vis": "^4.16.1"
   }
 }

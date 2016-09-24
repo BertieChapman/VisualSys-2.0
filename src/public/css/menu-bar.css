@@ -1,0 +1,47 @@
+
+.ui-menu-list {
+    display: none;
+}
+
+.vs-menu-bar {
+    border: solid thin purple;
+    size:auto;
+    padding: 0;
+    margin: 0;
+}
+
+#menu-file:hover #menu-file-list{
+    display: block;
+    z-index: 1;
+    position: absolute;
+    top: inherit;
+}
+
+#menu-edit:hover #menu-edit-list{
+    display: block;
+    z-index: 1;
+    position: absolute;
+    top: inherit;
+}
+
+#menu-view:hover #menu-view-list{
+    display: block;
+    z-index: 1;
+    position: absolute;
+    top: inherit;
+}
+
+.vs-menu-item {
+    display: inline-block;
+    height:inherit;
+    border: dashed thin red;
+}
+
+.vs-menu-header {
+    cursor:pointer;
+    display: inline-block;
+    background-color: #2E60A4;
+    border: solid thin white;
+    color: white;
+    padding: 10px;
+}

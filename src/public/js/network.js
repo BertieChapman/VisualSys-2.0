@@ -22,12 +22,16 @@ var edges = new vis.DataSet([
 function initNetworkArea(){
     var netArea = document.getElementById('network_area');
 
-    var data = {
+    dataSet = {
         nodes: nodes,
         edges: edges
     };
-    var options = {};
+    var options = {
+        width : '500px',
+        height: '500px'
+    };
 
     // initialize network
-    network = new vis.Network(netArea, data, options);
+    network = new vis.Network(netArea, dataSet, options);
 }
+

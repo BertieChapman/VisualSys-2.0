@@ -1,24 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <script type="text/javascript" src="/libs/vis/dist/vis.js"></script>
     <script src="libs/jquery-3.1.1.js"></script>
     <script src="libs/jquery-ui/jquery-ui.min.js"></script>
     <link href="libs/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css" />
     <script src="js/network.js"></script>
     <link href="/libs/vis/dist/vis.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <script src="js/menubar.js"></script>
+    <link href="css/menu-bar.css" rel="stylesheet" type="text/css">
+    <link href="css/network-area.css" rel="stylesheet" type="text/css">
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            //ev.target.appendChild(document.getElementById(data));
+            console.log(event.clientX);
+            console.log(event.clientY)
+            console.log(network.DOMtoCanvas({x : event.clientX, y : event.clientY * network.getScale()}));
+            var pos = network.DOMtoCanvas({x : event.clientX, y : event.clientY });
+            console.log("y " + pos.y)
+            dataSet.nodes.add({id :16, text : "test", x : pos.x , y : pos.y});
+
+            network.redraw();
+        }
+
+    </script>
 
 </head>
-<body onload="initNetworkArea()">
+
+</head>
+<body onload="initMenus(); initNetworkArea()">
     <h1>test</h1>
+    <div id="menu_bar" class="vs-menu-bar">
+        <div id="menu-file" class="vs-menu-item">
+            <span class="vs-menu-header">File</span>
+            <ul id="menu-file-list" class="ui-menu-list">
+                <li>
+                    <div>New Network</div>
+                </li>
+                <li>
+                    <div>New Project</div>
+                </li>
+                <li>
+                    <div>Save Project</div>
+                </li>
+                <li>
+                    <div>Save Project As</div>
+                </li>
+                <li>-</li>
+                <li>
+                    <div>Import From .iax</div>
+                </li>
+                <li>
+                    <div>Export To .iax</div>
+                </li>
+            </ul>
+        </div>
+        <div id="menu-edit" class="vs-menu-item">
+            <span class="vs-menu-header">Edit</span>
+            <ul id="menu-edit-list" class="ui-menu-list">
+                <li>
+                    <div>Undo</div>
+                </li>
+                <li>
+                    <div>Redo</div>
+                </li>
 
-    <div id="menu">
-
-        <div id="menu_file" class="vs-menu"><p>file</p></div>
-        <div id="menu_view" class="vs-menu vs-menu-file"><p>view</p></div>
-
+                <li>-</li>
+                <li>
+                    <div>Copy</div>
+                </li>
+                <li>
+                    <div>Paste</div>
+                </li>
+            </ul>
+        </div>
+        <div id="menu-view" class="vs-menu-item">
+            <span class="vs-menu-header">View</span>
+            <ul id="menu-view-list" class="ui-menu-list">
+                <li>
+                    <div>Toggle Entity Captions</div>
+                </li>
+            </ul>
+        </div>
     </div>
 
+    <div id="editor">
+
+        <div id="toolbox">
+
+            <div class="vs-toolbox-item">
+
+                <img src="img/default.png" ondragstart="drag(event)">
+                
+            </div>
+
+        </div>
+
+        <div id="network_area" onclick="click()" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+
+
+        </div>
+    </div>
 </body>
 </html>

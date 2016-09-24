@@ -46,7 +46,7 @@ class Images{
     }
     
     /**
-     * @return {Image} imageToRedrawWith The images that will be passed to the callback when it is invoked
+     * @return {Image} imageToRedrawWith The img that will be passed to the callback when it is invoked
      */    
     _redrawWithImage (imageToRedrawWith) {
         if (this.callback) {

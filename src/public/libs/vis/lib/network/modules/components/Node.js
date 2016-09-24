@@ -137,7 +137,7 @@ class Node {
     // this transforms all shorthands into fully defined options
     Node.parseOptions(this.options, options, true, this.globalOptions);
 
-    // load the images
+    // load the img
     if (this.options.image !== undefined) {
       if (this.imagelist) {
         this.imageObj = this.imagelist.load(this.options.image, this.options.brokenImage, this.id);

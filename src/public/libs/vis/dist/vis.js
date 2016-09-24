@@ -28647,7 +28647,7 @@ return /******/ (function(modules) { // webpackBootstrap
     // setting up all modules
     this.images = new _Images2.default(function () {
       return _this.body.emitter.emit("_requestRedraw");
-    }); // object with images
+    }); // object with img
     this.groups = new _Groups2.default(); // object with groups
     this.canvas = new _Canvas2.default(this.body); // DOM handler
     this.selectionHandler = new _SelectionHandler2.default(this.body, this.canvas); // Selection handler
@@ -29136,7 +29136,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
   /**
    * @class Images
-   * This class loads images and keeps them stored.
+   * This class loads img and keeps them stored.
    */
 
   var Images = function () {
@@ -29194,7 +29194,7 @@ return /******/ (function(modules) { // webpackBootstrap
           }
 
           /**
-           * @return {Image} imageToRedrawWith The images that will be passed to the callback when it is invoked
+           * @return {Image} imageToRedrawWith The img that will be passed to the callback when it is invoked
            */
 
       }, {
@@ -30018,7 +30018,7 @@ return /******/ (function(modules) { // webpackBootstrap
    *                              {string} image  An image url
    *                              {string} title  An title text, can be HTML
    *                              {anytype} group A group name or number
-   * @param {Network.Images} imagelist    A list with images. Only needed
+   * @param {Network.Images} imagelist    A list with img. Only needed
    *                                            when the node has an image
    * @param {Network.Groups} grouplist    A list with groups. Needed for
    *                                            retrieving group options
@@ -30139,7 +30139,7 @@ return /******/ (function(modules) { // webpackBootstrap
         // this transforms all shorthands into fully defined options
         Node.parseOptions(this.options, options, true, this.globalOptions);
 
-        // load the images
+        // load the img
         if (this.options.image !== undefined) {
           if (this.imagelist) {
             this.imageObj = this.imagelist.load(this.options.image, this.options.brokenImage, this.id);

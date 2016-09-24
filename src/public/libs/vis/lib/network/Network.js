@@ -104,7 +104,7 @@ function Network(container, data, options) {
   this.bindEventListeners();
 
   // setting up all modules
-  this.images              = new Images(() => this.body.emitter.emit("_requestRedraw")); // object with images
+  this.images              = new Images(() => this.body.emitter.emit("_requestRedraw")); // object with img
   this.groups              = new Groups(); // object with groups
   this.canvas              = new Canvas(this.body);                         // DOM handler
   this.selectionHandler    = new SelectionHandler(this.body, this.canvas);  // Selection handler

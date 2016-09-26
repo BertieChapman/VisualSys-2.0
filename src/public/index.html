@@ -25,15 +25,15 @@
         function drop(ev) {
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
-            //ev.target.appendChild(document.getElementById(data));
-            console.log(event.clientX);
-            console.log(event.clientY)
-            console.log(network.DOMtoCanvas({x : event.clientX, y : event.clientY * network.getScale()}));
-            var pos = network.DOMtoCanvas({x : event.clientX, y : event.clientY });
-            console.log("y " + pos.y)
-            dataSet.nodes.add({id :16, text : "test", x : pos.x , y : pos.y});
+            var pos = network.DOMtoCanvas({x : ev.offsetX, y : ev.offsetY });
+            console.log(pos);
 
-            network.redraw();
+            addNode(pos);
+        }
+
+        function clickevent(ev) {
+            network.addEdgeMode();
+            document.getElementById('linktext').innerHTML = "editing";
         }
 
     </script>
@@ -101,15 +101,20 @@
 
         <div id="toolbox">
 
-            <div class="vs-toolbox-item">
+            <div class="vs-toolbox-item" class = "vs-toolbox-item-entity">
 
                 <img src="img/default.png" ondragstart="drag(event)">
-                
+            </div>
+
+            <div id="link" class="vs-toolbox-item" class="vs-toolbox-item-link">
+
+                <img src="img/link.png" onclick="clickevent(event)">
+                <p id="linktext"></p>
             </div>
 
         </div>
 
-        <div id="network_area" onclick="click()" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div id="network_area" ondrop="drop(event)" ondragover="allowDrop(event)">
 
 
 

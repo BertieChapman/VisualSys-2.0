@@ -2,6 +2,8 @@
  * Created by Bertie on 23/09/2016.
  */
 
+var id = 100;
+
 var nodes = new vis.DataSet([
     {id: 1, label: 'Node 1'},
     {id: 2, label: 'Node 2'},
@@ -30,8 +32,15 @@ function initNetworkArea(){
         width : '500px',
         height: '500px'
     };
-
     // initialize network
     network = new vis.Network(netArea, dataSet, options);
 }
+
+function addNode(pos){
+    dataSet.nodes.add({id :id, text : "test", x : pos.x , y : pos.y});
+    id++;
+    network.redraw();
+}
+
+
 

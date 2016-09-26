@@ -13,6 +13,9 @@
     <script src="js/menubar.js"></script>
     <link href="css/menu-bar.css" rel="stylesheet" type="text/css">
     <link href="css/network-area.css" rel="stylesheet" type="text/css">
+    <link href="css/editor-options-bar.css" rel="stylesheet" type="text/css">
+    <link href="css/editor-toolbox.css" rel="stylesheet" type="text/css">
+
     <script>
         function allowDrop(ev) {
             ev.preventDefault();
@@ -42,7 +45,6 @@
 
 </head>
 <body onload="initMenus(); initNetworkArea()">
-    <h1>test</h1>
     <div id="menu_bar" class="vs-menu-bar">
         <div id="menu-file" class="vs-menu-item">
             <span class="vs-menu-header">File</span>
@@ -97,20 +99,29 @@
         </div>
     </div>
 
+    <div class="vs-editor-options-bar">
+
+
+    </div>
+
+    <div class="vs-editor-toolbox">
+        <div class="vs-toolbox-item" class = "vs-toolbox-item-entity">
+
+            <img src="img/default.png" ondragstart="drag(event)">
+        </div>
+
+        <div id="link" class="vs-toolbox-item" class="vs-toolbox-item-link">
+
+            <img src="img/link.png">
+        </div>
+
+
+    </div>
+
     <div id="editor">
 
         <div id="toolbox">
 
-            <div class="vs-toolbox-item" class = "vs-toolbox-item-entity">
-
-                <img src="img/default.png" ondragstart="drag(event)">
-            </div>
-
-            <div id="link" class="vs-toolbox-item" class="vs-toolbox-item-link">
-
-                <img src="img/link.png" onclick="clickevent(event)">
-                <p id="linktext"></p>
-            </div>
 
         </div>
 

@@ -4,10 +4,10 @@
 }
 
 .vs-menu-bar {
-    border: solid thin purple;
-    size:auto;
-    padding: 0;
-    margin: 0;
+    width: 100%;
+    height: auto;
+    padding: 2px;
+    background-color: #e5edfa;
 }
 
 #menu-file:hover #menu-file-list{
@@ -34,14 +34,19 @@
 .vs-menu-item {
     display: inline-block;
     height:inherit;
-    border: dashed thin red;
-}
-
-.vs-menu-header {
+    font-family: Tahoma;
+    font-size: 8pt;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
     cursor:pointer;
     display: inline-block;
-    background-color: #2E60A4;
-    border: solid thin white;
+    color: black;
+}
+
+.vs-menu-item:hover{
+    background-color: #3399FF;
     color: white;
-    padding: 10px;
+    transition: all 0.1s ease-in-out;
 }

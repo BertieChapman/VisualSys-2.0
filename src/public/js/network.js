@@ -29,8 +29,6 @@ function initNetworkArea(){
         edges: edges
     };
     var options = {
-        width : '500px',
-        height: '500px'
     };
     // initialize network
     network = new vis.Network(netArea, dataSet, options);

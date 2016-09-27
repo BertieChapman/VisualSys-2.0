@@ -1,0 +1,14 @@
+#editor {
+    overflow: hidden;
+    bottom: 0;
+    height:100%;
+    border: solid 3px #E5EDFA;
+    font-family: Tahoma;
+}
+
+#modes_list {
+    z-index: 1;
+    position: absolute;
+    padding: 5px;
+    margin: 10px;
+}

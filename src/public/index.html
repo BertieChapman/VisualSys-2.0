@@ -15,6 +15,7 @@
     <link href="css/network-area.css" rel="stylesheet" type="text/css">
     <link href="css/editor-options-bar.css" rel="stylesheet" type="text/css">
     <link href="css/editor-toolbox.css" rel="stylesheet" type="text/css">
+    <link href="css/editor.css" rel="stylesheet" type="text/css">
 
     <script>
         function allowDrop(ev) {
@@ -32,16 +33,34 @@
             console.log(pos);
 
             addNode(pos);
+            lineMode();
         }
 
-        function clickevent(ev) {
-            network.addEdgeMode();
-            document.getElementById('linktext').innerHTML = "editing";
+
+
+        // Below code needs to be cleaned
+
+        $( function() {
+            $( "input" ).checkboxradio({
+                icon: false
+            });
+        } );
+
+        function lineMode(){
+            var checkBox = document.getElementById('radio-2');
+            if(checkBox.checked){
+
+                network.on("release", function (params) {
+                    lineMode();
+                });
+                network.addEdgeMode();
+            }else{
+                network.disableEditMode();
+            }
         }
+
 
     </script>
-
-</head>
 
 </head>
 <body onload="initMenus(); initNetworkArea()">
@@ -105,13 +124,14 @@
     </div>
 
     <div class="vs-editor-toolbox">
-        <div class="vs-toolbox-item" class = "vs-toolbox-item-entity">
-
-            <img src="img/default.png" ondragstart="drag(event)">
+        <div class="vs-toolbox-header">Entities</div>
+        <div class="vs-toolbox-item-list">
+            <div class="vs-toolbox-item" class="vs-toolbox-item-entity">
+                <img src="img/default.png" ondragstart="drag(event)">
+            </div>
         </div>
-
+        <div class="vs-toolbox-header">Links</div>
         <div id="link" class="vs-toolbox-item" class="vs-toolbox-item-link">
-
             <img src="img/link.png">
         </div>
 
@@ -120,15 +140,14 @@
 
     <div id="editor">
 
-        <div id="toolbox">
-
-
-        </div>
-
+        <fieldset id="modes_list">
+            <legend>Editor Modes</legend>
+            <label for="radio-1">Move</label>
+            <input type="radio" name="radio-1" id="radio-1" checked onchange="lineMode()" accesskey="m" >
+            <label for="radio-2">Link</label>
+            <input type="radio" name="radio-1" id="radio-2" onchange="lineMode()" accesskey="l">
+        </fieldset>
         <div id="network_area" ondrop="drop(event)" ondragover="allowDrop(event)">
-
-
-
         </div>
     </div>
 </body>

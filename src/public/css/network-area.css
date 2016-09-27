@@ -1,12 +1,5 @@
 
 #network_area {
-
-    border: solid thin black;
-    size:auto;
-    display: inline-block;
-    position: absolute;
-    left: 212px;
-    right: 8px;
-    top: 86px;
-    bottom: 36px;
+    width:inherit;
+    height:inherit;
 }
